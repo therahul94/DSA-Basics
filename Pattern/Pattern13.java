@@ -7,6 +7,10 @@ public class Pattern13 {
     /*
      * Permutation and combination: 
      * 
+     * n         (n
+     *  c     =  ( c  * (n-k)) / k + 1
+     *   k+1     (  k
+     * 
      * iCj+1 = iCj * (i-j) / (j+1);
      * 
      * like : 
