@@ -9,12 +9,16 @@ public class Toggle{
         char[] chArr = s.toCharArray();
         for(int i = 0; i < chArr.length; i ++) {   
             if(chArr[i] >= 'a' && chArr[i] <= 'z') {
-                // chArr[i] = (char)(chArr[i] & ~32);
-                chArr[i] = (char)('A' + chArr[i] -'a');
+                // chArr[i] = Character.toUpperCase(chArr[i]);
+                // chArr[i] = (char)(chArr[i] - 32);
+                chArr[i] = (char)('A' + chArr[i] -'a'); // pepcoding sir's formula
+                // chArr[i] = (char)(chArr[i] & ~32); // bitwise method to convert from lower to upper
             }
             else if (chArr[i] >= 'A' && chArr[i] <= 'Z') {
-                // chArr[i] = (char)(chArr[i] | 32);
-                chArr[i] = (char)(chArr[i]-'A' + 'a');
+                // chArr[i] = Character.toLowerCase(chArr[i]);
+                // chArr[i] = (char)(chArr[i] + 32);
+                chArr[i] = (char)(chArr[i]-'A' + 'a');  // pepcoding sir's formula
+                // chArr[i] = (char)(chArr[i] | 32);   // bitwise method to convert from upper to lower
             }
         }
         return String.valueOf(chArr);
@@ -29,9 +33,22 @@ public class Toggle{
 }
 
 /*
-    P - A = p - a
-    p = P-A+a
-    P = p-a+A
+pepcoding sir's explanation: 
+=> 'P' - 'A' = 'p' - 'a'
+
+=> 'P' = 'p' - 'a' + 'A' ..(i)
+
+=> 'p' = 'P' - 'A' + 'a' ..(ii)
+
+from eq(i)
+uppercase of (j) = lowercase of (j) - 'a' + 'A'
+
+from eq(ii)
+lowercase of (j) = uppercase of (j) - 'A' + 'a'
+
+
+
+
  * 
  * 
  *    64 32 16 8 4 2 1
